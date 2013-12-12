@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-# FileName is serverXMLParser.py
+# FileName is parseServerXML.py
 
 # parse database info from tomcat's server.xml
 # output format:
@@ -15,8 +15,8 @@ if __name__ == "__main__":
     if len(argv) != 2:
         print "please enter file path"
         print "usage:"
-        print " python serverXMLParser.py [filePath]"
-        print " e.g. python serverXMLParser.py /usr/local/tomcat6-8083/conf/server.xml"
+        print " python parseServerXML.py [filePath]"
+        print " e.g. python parseServerXML.py /usr/local/tomcat6-8083/conf/server.xml"
     else:
 
         filePath = argv[1]
@@ -56,16 +56,16 @@ server.xml:
                         minPoolSize="1" initialPoolSize="5" acquireIncrement="2"
                         idleConnectionTestPeriod="60" maxIdleTime="1200"
                         driverClass="com.mysql.jdbc.Driver" user="root"
-                        password="password"
-                        jdbcUrl="jdbc:mysql://192.168.10.10:3306/ljnngowpp?useUnicode=true&amp;characterEncoding=utf8"
+                        password="1234"
+                        jdbcUrl="jdbc:mysql://192.168.1.1:3306/ljnngowpp?useUnicode=true&amp;characterEncoding=utf8"
                         factory="org.apache.naming.factory.BeanFactory"/>
         <Resource name="jdbc/ljngame_dnf" auth="Container"
 			type="com.mchange.v2.c3p0.ComboPooledDataSource" maxPoolSize="150"
                         minPoolSize="1" initialPoolSize="5" acquireIncrement="2"
                         idleConnectionTestPeriod="60" maxIdleTime="1200"
                         driverClass="com.mysql.jdbc.Driver" user="root"
-                        password="password"
-                        jdbcUrl="jdbc:mysql://192.168.10.10:3306/ljngame_dnf?useUnicode=true&amp;characterEncoding=utf8"
+                        password="1234"
+                        jdbcUrl="jdbc:mysql://192.168.1.1:3306/ljngame_dnf?useUnicode=true&amp;characterEncoding=utf8"
                          factory="org.apache.naming.factory.BeanFactory"/>
 </Context>
 
@@ -74,7 +74,7 @@ server.xml:
 <<<output:
 
 #/ljnngcdjx
-ljnngowpp       -h192.168.10.10    -P3306  -uroot  -ppassword
-ljngame_dnf     -h192.168.10.10    -P3306  -uroot  -ppassword
+ljnngowpp       -h192.168.1.1    -P3306  -uroot  -p1234
+ljngame_dnf     -h192.168.1.1    -P3306  -uroot  -p1234
 
 """
